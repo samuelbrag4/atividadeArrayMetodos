@@ -250,7 +250,7 @@ let  minhasCores = ["verde", "amarelo", "roxo", "vermelho", "laranja", "preto"];
 minhasCores.reverse();
 
 // Exibo novo elemento invertido
-console.log(minhasCores);
+// console.log(minhasCores);
 
 // Exemplo 2: minha família
 let  minhaFamilia = ["mãe", "pai", "irmão", "irmã", "cachorro", "eu"];
@@ -260,4 +260,30 @@ let  minhaFamilia = ["mãe", "pai", "irmão", "irmã", "cachorro", "eu"];
 minhaFamilia.reverse();
 
 // Exibo os elementos invertidos
-console.log(minhaFamilia);
+// console.log(minhaFamilia);
+
+// Nono método: .concat()
+// Função: adiciona novos elementos a um Array
+// Exemplo 1: números
+let theListNumbers = [1, 2, 3, 4, 5];
+// declaro os números iniciais
+
+let newTheListNumbers = theListNumbers.concat([6, 7, 8]);
+// Crio uma nova lista com os novos números 
+
+// Exibo a lista antiga e a nova com uma mensagem apropriada
+// console.log(theListNumbers);
+// console.log("A nova lista de números é: ");
+// console.log(newTheListNumbers);
+
+// Exemplo 2: novos usuários
+let usersList = ['Robert', 'Tonny', 'Louize', 'Charles', 'Noah'];
+// Esses são os usuários iniciais
+
+let newUsersList = usersList.concat(['Liam', 'William', 'James']);
+// Esses são os novos usuários, que serão adicionados a usersList com o método .concat()
+
+// Exibo as mensagens e suas informações 
+// console.log(usersList);
+// console.log("Os novos usuários são: ");
+// console.log(newUsersList);
