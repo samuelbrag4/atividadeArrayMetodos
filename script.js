@@ -90,3 +90,27 @@ let usuariosIndice2 = [
 let procurar = usuariosIndice2.findIndex((user, index, array) => user.nome === 'Rafael');
 // console.log(procurar);
 
+// Quinto método: .find()
+// Função: É parecido com o método 4, porem nesse caso é exibido todo o elemento
+// Exemplo 1: Informações pessoais
+let peopleList = [
+	{nome: 'Amanda', idade: 60, cidade: 'Parintins'},
+	{nome: 'Luciana', idade: 23, cidade: 'Valinhos'},
+	{nome: 'Thiago', idade: 1, cidade: 'Vinhedo'},
+	{nome: 'Eduardo', idade: 25, cidade: 'Campinas'},
+];
+
+let people = peopleList.find((user, index, array) => user.nome === 'Thiago');
+// console.log(people);
+
+// Exemplo 2: Informações produto
+let listaProduto = [
+	{nome: 'Sabão em Pó', codigo: '294493957', preco: 6.99},
+	{nome: 'Fini', codigo: '295729573', preco: 12.99 },
+	{nome: 'Garrafa Água c/ gás', codigo: '204275394', preco: 7.90 },
+	{nome: 'Alface', codigo: '027483758', preco: 5.99 },
+];
+
+let informacoes = listaProduto.find((user, index, array) => user.nome === 'Fini');
+
+console.log(informacoes);
