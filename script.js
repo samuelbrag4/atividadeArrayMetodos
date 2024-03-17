@@ -332,3 +332,13 @@ carrinho.splice(1, 1, '🍗');
 
 // Exibo a mensagem que mostra que eu troquei a carne
 // console.log(carrinho);
+
+// Exemplo 3: Removendo do carrinho
+let  carrinho = ['🍫', '🥩', '🥬', '🧅'];
+// Todos os itens presentes no carrinho
+
+carrinho.splice(1, 1,);
+// Não gosto de carne bovina, entã tiro ela
+
+// Exibo a mensagem que mostra que eu tirei a carne
+// console.log(carrinho);
