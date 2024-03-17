@@ -113,4 +113,35 @@ let listaProduto = [
 
 let informacoes = listaProduto.find((user, index, array) => user.nome === 'Fini');
 
-console.log(informacoes);
+// console.log(informacoes);
+
+// Sexto método: .filter()
+// Função: serve para filtrarmos os elementos que estão em um Array, os que passarem por esse filtro são exibidos, os que não, serão ignorados
+// Exemplo 1: Filtrar pessoas que querem entrar em um brinquedo em um parque de diversões 
+let tamanhoEntrada = [
+	{nome: 'Pedro', tamanho: 1.85},
+	{nome: 'Felipe', tamanho: 1.34},
+	{nome: 'Roberto', tamanho: 1.75},
+	{nome: 'Fulano', tamanho: 1.64},
+];
+
+let verificandoTamanho = tamanhoEntrada.filter((user, index, array) => user.tamanho > 1.65);
+
+// console.log("Esses são os usuários que podem entrar no brinquedo ");
+// console.log(verificandoTamanho);
+// console.log(" Os outros NÃO podem entrar!!");
+
+// Exemplo 2: Presença de alunos
+let alunos = [
+	{numero: 1, presenca: 'v'},
+	{numero: 2, presenca: 'v'},
+	{numero: 3, presenca: 'f'},
+	{numero: 4, presenca: 'v'},
+  {numero: 5, presenca: 'f'},
+];
+
+let alunospresentes = alunos.filter((user, index, array) => user.presenca === 'v');
+
+console.log("Esses são os alunos que vieram:");
+console.log(alunospresentes);
+console.log("Os outros não vieram");
