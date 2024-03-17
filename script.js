@@ -33,3 +33,35 @@ let numPar = listaNum.some(function(numero) { return numero % 2 === 0;
 // console.log(numPar);
 // console.log("Tem número par!!");
 
+// Terceiro método: .every() 
+// Função: este comando serve para nos dizer se todos os itens passam por uma condição
+// Exemplo 1: verifica se todos os usuários possuem mais de R$1,00 e menos de R$1000 em suas contas
+let usuariosDinheiro = [
+	{usuario: 'Alejandra', dinheiro: 500},
+	{usuario: 'Thiago', dinheiro: 90000},
+	{usuario: 'Tony Stark', dinheiro: 12400000},
+	{usuario: 'Vanessa Lopez', dinheiro: 2},
+];
+
+// No "verificacao1" vemos se todos tem mais que R$1,00 em suas contas
+let verificacao1 = usuariosDinheiro.every((user, index, array) => user.dinheiro > 1);
+// No "verificacao2" vemos se todos tem menos de R$1.000 em suas contas
+let verificacao2 = usuariosDinheiro.every(user => user.dinheiro < 1.000);
+
+console.log("Verificando...");
+console.log(verificacao1);
+console.log(verificacao2);
+
+// Exemplo 2: verifica se todos os dias (segunda à sexta) entraram 100 pessoas na loja
+let diasSemana = [
+	{dia: 'segunda-feira', pessoas: 45},
+	{dia: 'terça-feira', pessoas: 134},
+	{dia: 'quarta-feira', pessoas: 593},
+	{dia: 'quinta-feira', pessoas: 2},
+  {dia: 'sexta-feira', pessoas: 12},
+];
+let entraram1 = diasSemana.every((user, index, array) => user.pessoas > 100);
+
+console.log(diasSemana);
+console.log("Verificando se a meta de 100 pessoas todos os dias foi atingida...")
+console.log(entraram1);
