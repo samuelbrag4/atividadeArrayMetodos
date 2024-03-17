@@ -238,5 +238,26 @@ let arrays = [[[[[[[[[[['a', 'b', 'c']], [[[[[['d']]]]]]]]]]]]]]];
 arrays.flat(Infinity); 
 
 // Exibo o Array ordenado
-console.log(arrays.flat(Infinity));
+// console.log(arrays.flat(Infinity));
 
+// Oitavo método: .reverse()
+// Função: serve para revertermos a ordem de um Array. Ex: 1, 2, 3 (com o comando .reverse) 3, 2, 1
+// Exemplo 1: cores
+let  minhasCores = ["verde", "amarelo", "roxo", "vermelho", "laranja", "preto"];
+// Declaro as cores
+
+// Inverto a ordem dos elemtos de minhasCores
+minhasCores.reverse();
+
+// Exibo novo elemento invertido
+console.log(minhasCores);
+
+// Exemplo 2: minha família
+let  minhaFamilia = ["mãe", "pai", "irmão", "irmã", "cachorro", "eu"];
+// Mostro minha família
+
+// Reverto a ordem dos elementos de minha família
+minhaFamilia.reverse();
+
+// Exibo os elementos invertidos
+console.log(minhaFamilia);
