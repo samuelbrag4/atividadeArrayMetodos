@@ -211,3 +211,32 @@ let alunospresentes = alunos.filter(
 // console.log(alunospresentes);
 // console.log("Os outros não vieram");
 
+// Sétimo método: .flat()
+// Função: esse método serve para quando em um Array temos dentro dele outros Sub-Arrays, assim o método transforma todos esses arrays em um só
+// Exemplo 1: nesse exemplo dentro do Array possuem alguns sub-números
+let numeros = [1, 2, 3, [4, 5], [6, 7, [8, 9]]];
+// Declaro dentro do Array alguns números, e dentro dele alguns outros sub-números
+
+// Utilizo o .flat que irá configurar a profundidade do Array
+numeros.flat(); 
+numeros.flat(2); 
+
+// Agora exibo o array configurado
+// console.log(numeros.flat(2));
+
+// Exemplo 2: Agora eu utilizo desse método para organizar o Array quando eu não tenho ideia do nível de profundidade dos sub-Arrays, mas quero que todos estejam dentro de um só elemento
+let arrays = ['Luiza', 'Thiago', 'Lírio', ['Chico', 'Xande'], ['Joui', 'Elizabeth', ['Cézar', 'Dara']]];
+
+arrays.flat(); 
+arrays.flat(2); 
+// console.log(arrays.flat(2))
+
+// Exemplo 2: agora eu utilizo letras, e o comando não tem ideia da profundidade dos sub_arrays, mas quer ter certeza de que todos estarão em um único elemento
+let arrays = [[[[[[[[[[['a', 'b', 'c']], [[[[[['d']]]]]]]]]]]]]]];
+
+// o Infinity funciona como a propria palavra (infinito), ele representa tudo o que pode estar no Array
+arrays.flat(Infinity); 
+
+// Exibo o Array ordenado
+console.log(arrays.flat(Infinity));
+
