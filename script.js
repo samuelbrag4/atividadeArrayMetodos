@@ -2,146 +2,212 @@
 // Função: esse comando transforma todos os elementos de um array em um só! Para ficar mais fácil de se entender vou dar dois exemplos:
 // Primeiro exemplo: Números
 let listaNumeros = [13, 64, 38, 32];
+// Como podemos ver, ao invés de declararmos cada variável com um valor, declaramos uma só com o valor de várias utilizando o método Array
+
 let total = listaNumeros.reduce((total, todosNumeros) => total + todosNumeros);
+// Agora eu declaro uma variável total, onde eu utilizo o .reduce para somar todos os números da lista
+
+// Agora eu exibo o total
 // console.log(total);
-// Como podemos ver, ao invés de declararmos cada variável com um valor, declaramos uma só com o valor de várias e somo elas
+
 // Segundo exemplo: preços de mercado
-let listaMercadoPrecos = [12.99, 20.99, 100.00, 9.99];
+
+let listaMercadoPrecos = [12.99, 20.99, 100.0, 9.99];
+// Novamente com o método Array, declaro uma variável que possuí todos os valore que irei utilizar
+
 let tudo = listaMercadoPrecos.reduce((tudo, precoTotal) => tudo + precoTotal);
+// Agora o método .reduce é utilizado para somar todos os valores, e o cáuculo é adicionado a tudo
+
+// Agora eu exibo o resultado
 // console.log(tudo);
 
 // Segundo método: .some()
-// Esse código serve para vermos se um elemento passa por uma condição (true) ou não (false)
+// Esse método serve para vermos se pelo menos um elemento passa por uma condição (true) ou não (false)
 // Exemplo 1: verifica se um usuário tem mais de 18 anos
-let usuariosIdade = [
-	{usuario: 'João', idade: 34},
-	{usuario: 'Maria', idade: 65},
-	{usuario: 'Carlos', idade: 34},
-	{usuario: 'Vanessa', idade: 18},
-];
 
-let maiorDezoito = usuariosIdade.some((user, index, array) => user.idade === 18);
+let usuariosIdade = [
+  { usuario: "João", idade: 34 },
+  { usuario: "Maria", idade: 65 },
+  { usuario: "Carlos", idade: 34 },
+  { usuario: "Vanessa", idade: 18 }
+];
+// aqui eu declaro de uma vez todos os usuários que passarão nessa condição, utilizando o Array
+
+let maiorDezoito = usuariosIdade.some(
+  (user, index, array) => user.idade === 18
+);
+// Utilizando o método .some se a condição for true ele me exibe que pelo menos um usuário é maior de idade (true)
+
+// Exibo a mensagem de true
 // console.log(maiorDezoito);
-// console.log("Um dos usuários é maior de 18 anos!!");
 
 // Exemplo 2: verifica se tem algum número par
-let listaNum = [0, 34, 4, 7, 8, 2, 5];
 
-let numPar = listaNum.some(function(numero) { return numero % 2 === 0;
+let listaNum = [1, 34, 3, 7, 9, 5, 5];
+// Declaro todos os números que irei utilizar
+
+let numPar = listaNum.some(function (numero) {
+  return numero % 2 === 0;
 });
+// O método .some me ajuda a fazer com que todos os números cujo a divisão por 2 tenha um resto igual a 0 (par) sejam exibidos
 
+// Exibo a mensagem que irá mostrar se tem numeros pares ou não!
 // console.log(numPar);
-// console.log("Tem número par!!");
 
-// Terceiro método: .every() 
-// Função: este comando serve para nos dizer se todos os itens passam por uma condição
+// Agora utilizo o if para se algum número quando for dividido por 2 tiver um resto diferente de 0 não acontecer nada, e caso essa condição estiver correta uma mensagem será exibida
+if (numPar % 2 !== 0) {
+  // console.log("Tem número par!!");
+}
+
+// Terceiro método: .every()
+// Função: este comando serve para nos dizer se todos os itens passam por uma condição. Caso eu receba uma mensagem "true" todos os elementos passam pela condição, caso contrário "false"
+
 // Exemplo 1: verifica se todos os usuários possuem mais de R$1,00 e menos de R$1000 em suas contas
 let usuariosDinheiro = [
-	{usuario: 'Alejandra', dinheiro: 500},
-	{usuario: 'Thiago', dinheiro: 90000},
-	{usuario: 'Tony Stark', dinheiro: 12400000},
-	{usuario: 'Vanessa Lopez', dinheiro: 2},
+  { usuario: "Alejandra", dinheiro: 500 },
+  { usuario: "Thiago", dinheiro: 90000 },
+  { usuario: "Tony Stark", dinheiro: 12400000 },
+  { usuario: "Vanessa Lopez", dinheiro: 2 }
 ];
+// Declaro os usuários e sua quantia em R$
 
 // No "verificacao1" vemos se todos tem mais que R$1,00 em suas contas
-let verificacao1 = usuariosDinheiro.every((user, index, array) => user.dinheiro > 1);
-// No "verificacao2" vemos se todos tem menos de R$1.000 em suas contas
-let verificacao2 = usuariosDinheiro.every(user => user.dinheiro < 1.000);
+let verificacao1 = usuariosDinheiro.every(
+  (user, index, array) => user.dinheiro > 1
+);
 
+// No "verificacao2" vemos se todos tem menos de R$1.000 em suas contas
+let verificacao2 = usuariosDinheiro.every((user) => user.dinheiro < 1.0);
+
+// Exibo as mensagens
 // console.log("Verificando...");
 // console.log(verificacao1);
 // console.log(verificacao2);
 
 // Exemplo 2: verifica se todos os dias (segunda à sexta) entraram 100 pessoas na loja
+
 let diasSemana = [
-	{dia: 'segunda-feira', pessoas: 45},
-	{dia: 'terça-feira', pessoas: 134},
-	{dia: 'quarta-feira', pessoas: 593},
-	{dia: 'quinta-feira', pessoas: 2},
-  {dia: 'sexta-feira', pessoas: 12},
+  { dia: "segunda-feira", pessoas: 45 },
+  { dia: "terça-feira", pessoas: 134 },
+  { dia: "quarta-feira", pessoas: 593 },
+  { dia: "quinta-feira", pessoas: 2 },
+  { dia: "sexta-feira", pessoas: 12 }
 ];
+// Declaro as variáveis que me mostram os dias da semana e a quantidade de pessoas que entraram na loja
+
+// Agora utilizo o comando .every ára ver se mais de 100 pessoas entraram
 let entraram1 = diasSemana.every((user, index, array) => user.pessoas > 100);
 
+// Exibo as mensagens apropriadas
 // console.log(diasSemana);
 // console.log("Verificando se a meta de 100 pessoas todos os dias foi atingida...")
 // console.log(entraram1);
 
 // Quarto método: .findIndex()
-// Função: serve para mostrar o índice de um item
+// Função: serve para mostrar o índice de um item (lembre-se que a ordem é 0-1-2-3...)
+
 // Exemplo 1: mostra a posição (índice) de um usuário quando inserido seu nome
 let usuariosIndice = [
-	{nome: 'Izabela', idade: 15},
-	{nome: 'Rafael', idade: 23},
-	{nome: 'Amanda', idade: 39},
-	{nome: 'Izabel', idade: 20},
+  { nome: "Izabela", idade: 15 },
+  { nome: "Rafael", idade: 23 },
+  { nome: "Amanda", idade: 39 },
+  { nome: "Izabel", idade: 20 }
 ];
+// Declaro os usuários
 
-let achar = usuariosIndice.findIndex((user, index, array) => user.nome === 'Izabel');
+let achar = usuariosIndice.findIndex(
+  (user, index, array) => user.nome === "Izabel"
+);
+
+// Exibo a mensagem do índice
 // console.log(achar);
 
-// Exemplo 2: mostra as informações de um usuário quando inserido o seu nome
-let usuariosIndice2 = [
-	{nome: 'Izabela', idade: 15},
-	{nome: 'Rafael', idade: 23},
-	{nome: 'Amanda', idade: 39},
-	{nome: 'Izabel', idade: 20},
+// Exemplo 2: mostra o índice do andar de cada família
+let familiaAndar = [
+  { andar: 1, familia: "Moretti" },
+  { andar: 2, familia: "Cavalcante" },
+  { andar: 3, familia: "Florence" },
+  { andar: 4, familia: "Castelo" }
 ];
+// Declaradas as famílias agora eu declaro o let "procurar" com o método .findIndex que quando inserido a palavra chave exibe o índice
+let procurar = familiaAndar.findIndex(
+  (user, index, array) => user.familia === "Cavalcante"
+);
 
-let procurar = usuariosIndice2.findIndex((user, index, array) => user.nome === 'Rafael');
+// Exibo a mensagem do Índice
 // console.log(procurar);
 
 // Quinto método: .find()
-// Função: É parecido com o método 4, porem nesse caso é exibido todo o elemento
+// Função: É parecido com o método 4, porem nesse caso é exibido todo o elemento (no caso do exemplo 1 é exibido o nome, idade e cidade)
+
 // Exemplo 1: Informações pessoais
 let peopleList = [
-	{nome: 'Amanda', idade: 60, cidade: 'Parintins'},
-	{nome: 'Luciana', idade: 23, cidade: 'Valinhos'},
-	{nome: 'Thiago', idade: 1, cidade: 'Vinhedo'},
-	{nome: 'Eduardo', idade: 25, cidade: 'Campinas'},
+  { nome: "Amanda", idade: 60, cidade: "Parintins" },
+  { nome: "Luciana", idade: 23, cidade: "Valinhos" },
+  { nome: "Thiago", idade: 1, cidade: "Vinhedo" },
+  { nome: "Eduardo", idade: 25, cidade: "Campinas" }
 ];
 
-let people = peopleList.find((user, index, array) => user.nome === 'Thiago');
+// Declarado a lista de pessoas agora eu crio uma variável (people) que com o método .find após ser inserido a palavra chave exibe o elemento respectivo
+let people = peopleList.find((user, index, array) => user.nome === "Thiago");
+
+// Exibo o elemento
 // console.log(people);
 
 // Exemplo 2: Informações produto
+
 let listaProduto = [
-	{nome: 'Sabão em Pó', codigo: '294493957', preco: 6.99},
-	{nome: 'Fini', codigo: '295729573', preco: 12.99 },
-	{nome: 'Garrafa Água c/ gás', codigo: '204275394', preco: 7.90 },
-	{nome: 'Alface', codigo: '027483758', preco: 5.99 },
+  { nome: "Sabão em Pó", codigo: "294493957", preco: 6.99 },
+  { nome: "Fini", codigo: "295729573", preco: 12.99 },
+  { nome: "Garrafa Água c/ gás", codigo: "204275394", preco: 7.9 },
+  { nome: "Alface", codigo: "027483758", preco: 5.99 }
 ];
+// Esse exemplo é um "projeto" de app de supermercado, que quando inserido o nome do produto aparece todas as suas informações
+let informacoes = listaProduto.find(
+  (user, index, array) => user.nome === "Fini"
+);
 
-let informacoes = listaProduto.find((user, index, array) => user.nome === 'Fini');
-
+// Exibo as informações do produto
 // console.log(informacoes);
 
 // Sexto método: .filter()
 // Função: serve para filtrarmos os elementos que estão em um Array, os que passarem por esse filtro são exibidos, os que não, serão ignorados
-// Exemplo 1: Filtrar pessoas que querem entrar em um brinquedo em um parque de diversões 
+// Exemplo 1: Filtrar pessoas que querem entrar em um brinquedo em um parque de diversões
 let tamanhoEntrada = [
-	{nome: 'Pedro', tamanho: 1.85},
-	{nome: 'Felipe', tamanho: 1.34},
-	{nome: 'Roberto', tamanho: 1.75},
-	{nome: 'Fulano', tamanho: 1.64},
+  { nome: "Pedro", tamanho: 1.85 },
+  { nome: "Felipe", tamanho: 1.34 },
+  { nome: "Roberto", tamanho: 1.75 },
+  { nome: "Fulano", tamanho: 1.64 }
 ];
+// Declaro as variáveis que serão filtradas
 
-let verificandoTamanho = tamanhoEntrada.filter((user, index, array) => user.tamanho > 1.65);
+let verificandoTamanho = tamanhoEntrada.filter(
+  (user, index, array) => user.tamanho > 1.65
+);
+// Crio o comando que irá filtra-las
 
+// Exibo as mensagens
 // console.log("Esses são os usuários que podem entrar no brinquedo ");
 // console.log(verificandoTamanho);
 // console.log(" Os outros NÃO podem entrar!!");
 
 // Exemplo 2: Presença de alunos
 let alunos = [
-	{numero: 1, presenca: 'v'},
-	{numero: 2, presenca: 'v'},
-	{numero: 3, presenca: 'f'},
-	{numero: 4, presenca: 'v'},
-  {numero: 5, presenca: 'f'},
+  { numero: 1, presenca: "v" },
+  { numero: 2, presenca: "v" },
+  { numero: 3, presenca: "f" },
+  { numero: 4, presenca: "v" },
+  { numero: 5, presenca: "f" }
 ];
+// Crio as variáveis com os números respectivos dos alunos, e se vieram (v) ou se faltarsm (f)
 
-let alunospresentes = alunos.filter((user, index, array) => user.presenca === 'v');
+let alunospresentes = alunos.filter(
+  (user, index, array) => user.presenca === "v"
+);
+// Com o comando ,filter o comando só irá me exibir os alunos que vieram (v)
 
-console.log("Esses são os alunos que vieram:");
-console.log(alunospresentes);
-console.log("Os outros não vieram");
+// Exibo as mensagens apropriadas
+// console.log("Esses são os alunos que vieram:");
+// console.log(alunospresentes);
+// console.log("Os outros não vieram");
+
