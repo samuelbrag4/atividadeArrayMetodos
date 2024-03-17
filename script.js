@@ -310,3 +310,25 @@ let juntar = desenho.join("");
 // Exibo as mensagens 
 // console.log("Desenho formado:")
 // console.log(juntar);
+
+// Método .splice
+// Função: esse método adiciona ou altera os elementos de um Array
+// Exemplo 1: adiciona mes
+let  meses = ['Janeiro', 'Março', 'Abril', 'Junho'];
+// Declaro os meses (está faltando um)
+
+let novoMes = meses.splice(1, 0, 'Fevereiro');
+// Adiciono o novo mes
+
+// Exibo o novo conjunto de meses 
+// console.log(meses);
+
+// Exemplo 2: Adicionando ao carrinho
+let  carrinho = ['🍫', '🥩', '🥬', '🧅'];
+// Todos os itens presentes no carrinho
+
+carrinho.splice(1, 1, '🍗');
+// Não gosto de carne bovina, então troquei por carne de frango
+
+// Exibo a mensagem que mostra que eu troquei a carne
+// console.log(carrinho);
