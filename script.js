@@ -48,9 +48,9 @@ let verificacao1 = usuariosDinheiro.every((user, index, array) => user.dinheiro 
 // No "verificacao2" vemos se todos tem menos de R$1.000 em suas contas
 let verificacao2 = usuariosDinheiro.every(user => user.dinheiro < 1.000);
 
-console.log("Verificando...");
-console.log(verificacao1);
-console.log(verificacao2);
+// console.log("Verificando...");
+// console.log(verificacao1);
+// console.log(verificacao2);
 
 // Exemplo 2: verifica se todos os dias (segunda à sexta) entraram 100 pessoas na loja
 let diasSemana = [
@@ -62,6 +62,31 @@ let diasSemana = [
 ];
 let entraram1 = diasSemana.every((user, index, array) => user.pessoas > 100);
 
-console.log(diasSemana);
-console.log("Verificando se a meta de 100 pessoas todos os dias foi atingida...")
-console.log(entraram1);
+// console.log(diasSemana);
+// console.log("Verificando se a meta de 100 pessoas todos os dias foi atingida...")
+// console.log(entraram1);
+
+// Quarto método: .findIndex()
+// Função: serve para mostrar o índice de um item
+// Exemplo 1: mostra a posição (índice) de um usuário quando inserido seu nome
+let usuariosIndice = [
+	{nome: 'Izabela', idade: 15},
+	{nome: 'Rafael', idade: 23},
+	{nome: 'Amanda', idade: 39},
+	{nome: 'Izabel', idade: 20},
+];
+
+let achar = usuariosIndice.findIndex((user, index, array) => user.nome === 'Izabel');
+// console.log(achar);
+
+// Exemplo 2: mostra as informações de um usuário quando inserido o seu nome
+let usuariosIndice2 = [
+	{nome: 'Izabela', idade: 15},
+	{nome: 'Rafael', idade: 23},
+	{nome: 'Amanda', idade: 39},
+	{nome: 'Izabel', idade: 20},
+];
+
+let procurar = usuariosIndice2.findIndex((user, index, array) => user.nome === 'Rafael');
+// console.log(procurar);
+
