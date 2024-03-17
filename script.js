@@ -287,3 +287,26 @@ let newUsersList = usersList.concat(['Liam', 'William', 'James']);
 // console.log(usersList);
 // console.log("Os novos usuários são: ");
 // console.log(newUsersList);
+
+// Décimo método: .join()
+// Função: esse método une elementos de um Array em uma única string ou cria uma string
+// Exemplo 1: Deixo a estética da lista de frutas melhor
+const listFruits = ["🍎", "🍌", "🍊", "🍉", "🥝", "🍑", "🍐", "🍓"];
+// Mostro os elementos da lista de frutas (ACHEI MUITO TOP QUE DA PRA COLOCAR EMOJIS)
+
+const all = listFruits.join("-");
+// Adiciono uma string que sapara os elementos com um traço
+
+// Exibo as mensagens
+// console.log("Os elementos da sua lista são: ")
+// console.log(all);
+
+// Exemplo 2: une os itens para formar o desenho
+let desenho = ["(", "⌐", "■", "_", "■", ")"];
+// Mostro os elementos que formarão o desenho
+let juntar = desenho.join("");
+// Adiciono uma string que junta tudo
+
+// Exibo as mensagens 
+// console.log("Desenho formado:")
+// console.log(juntar);
